@@ -32,8 +32,10 @@
 
 ### Trainng
 
-#### 从零开始训练
 
+* COCO2014数据集
+  * 数据集下载地址：[MSCOCO2014](https://cocodataset.org/#download)
+  * 数据集包含**82,783**张训练图像和**40,504**张验证图像，每个图像的分辨率为**256x256**
 * 打开args_fusion.py对训练参数进行设置：
 * 参数说明：
 
@@ -72,7 +74,7 @@ parser.add_argument('--use_lr_scheduler', default=True, type=bool, help='是否�
 
 ```
 name test
-image_path D:/MyDataset/train2014
+image_path ./dataset/train2014
 gray True
 batch_size 32
 image_num 80000
