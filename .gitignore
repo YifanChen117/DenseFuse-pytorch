@@ -21,9 +21,6 @@ wheels/
 *.egg
 MANIFEST
 
-# PyTorch
-*.pth
-*.pt
 
 # Jupyter Notebook
 .ipynb_checkpoints
