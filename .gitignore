@@ -65,7 +65,7 @@ dataset/
 fusion_result/
 test_data/
 result/
-weight/
+
 weight_new_trained/
 
 # Temporary files

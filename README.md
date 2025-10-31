@@ -11,23 +11,8 @@
 ## 文件结构
 
 ```shell
-├─fusion_result     # 使用我训练好的权重对test_data内的图像进行融合的结果 
-│  ├─fusion_result_Exposure
-│  ├─fusion_result_Lytro
-│  ├─fusion_result_Road
-│  └─fusion_result_TNO
-|
-├─logs           	# 用于存储训练过程中产生的Tensorboard文件,这里不提供（文件过大，无法上传）
-│  
 ├─pytorch_msssim 	# 用于计算SSIM损失，来自官方代码库
 |
-├─test_data      	# 用于测试的不同图片
-│  ├─Exposure      		# RGB   多曝光
-│  ├─Lytro         		# RGB   多聚焦 
-│  ├─Road          		# Gray  可见光+红外
-│  └─Tno           		# Gray  可见光+红外
-|
-├─weight         	# 保存训练好的权重
 │ 
 ├─args_fusion.py 	# 在该文件里修改训练参数
 │ 
@@ -86,7 +71,7 @@ parser.add_argument('--use_lr_scheduler', default=True, type=bool, help='是否�
 * 你可以在运行窗口看到如下信息：
 
 ```
-name WJQ
+name test
 image_path D:/MyDataset/train2014
 gray True
 batch_size 32
@@ -102,7 +87,7 @@ ssim_weight [1, 10, 100, 1000, 10000]
 网络模型及优化器构建完成...
 Tensorboard 构建完成，进入路径：./logs/0404_20-13_Gray_epoch=5
 然后使用该指令查看训练过程：tensorboard --logdir=./
-Start Training on NVIDIA GeForce RTX 3080 Laptop GPU...
+Start Training on NVIDIA GeForce RTX 4070ti GPU...
 Epoch [1/5]: 100%|██████████| 2500/2500 [13:39<00:00,  3.05it/s, pixel_loss=0.000483, ssim_loss=0.00118]
 Epoch [2/5]: 100%|██████████| 2500/2500 [14:11<00:00,  2.93it/s, pixel_loss=0.000132, ssim_loss=0.00029]
 Epoch [3/5]: 100%|██████████| 2500/2500 [13:41<00:00,  3.04it/s, pixel_loss=7.08e-5, ssim_loss=0.000103]
@@ -140,7 +125,7 @@ Process finished with exit code 0
 
 ```shell
 获取测试设备...
-测试设备为：NVIDIA GeForce GTX 1650...
+测试设备为：NVIDIA GeForce GTX 4070Ti...
 开始构建网络...
 开始载入权重...
 载入完成！！！
