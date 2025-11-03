@@ -11,12 +11,12 @@ import time
 from network import Dense_Encoder, CNN_Decoder
 os.environ['KMP_DUPLICATE_LIB_OK'] = 'TRUE'
 
-gray = True
+gray = True # True为灰度图像，False为RGB图像
 if gray:
-    IR_image_path = 'please/input/your/ir_image_path/'
-    VIS_image_path = 'please/input/your/vis_image_path/'
-    result_path = './result/'
-    weight_path = './weight/your_weight.pt'
+    IR_image_path = './test_IR/'
+    VIS_image_path = './test_VIS/'
+    result_path = './result/test/'
+    weight_path = './weight/0406_19-31_Gray_epoch=6.pt'  # 默认预训练权重文件，也可使用自己训练的.pt文件
     print("gray")
 else:
     IR_image_path = 'please/input/your/ir image_path/'

@@ -12,6 +12,17 @@
 
 ```shell
 ├─pytorch_msssim 	# 用于计算SSIM损失，来自官方代码库
+├─test_IR          # 测试集红外图像文件夹
+  ├─00805.png
+  ├─00825.png
+  ├─00834.png
+  ├─00896.png
+|
+├─test_VIS         # 测试集可见光图像文件夹
+  ├─00805.png
+  ├─00825.png
+  ├─00834.png
+  ├─00896.png
 |
 │ 
 ├─args_fusion.py 	# 在该文件里修改训练参数
@@ -41,9 +52,9 @@
 
 | 参数名           | 说明                                                         |
 | ---------------- | ------------------------------------------------------------ |
-| image_path       | 用于训练的数据集的路径                                       |
+| image_path       | 用于训练的数据集的路径, 目录结构为将train2014文件夹置于根目录下的dataset文件夹中       |
 | gray             | 为`True`时会进入灰度图训练模式，生成的权重用于对单通道灰度图的融合（如test_data里的Road和Tno）; 为`False`时会进入彩色RGB图训练模式，生成的权重用于对三通道彩色图的融合（如test_data里的Exposure和Lytro）; |
-| image_num        | `MSCOCO/train2014`数据集包含**82,783**张图像，设置该参数来确定用于训练的图像的数量 |
+| image_num        | `train2014`数据集包含**82,783**张图像，设置该参数来确定用于训练的图像的数量 |
 | num_workers      | 加载数据集时使用的CPU工作进程数量，为0表示仅使用主进程，（在Win10下建议设为0，否则可能报错。Win11下可以根据你的CPU线程数量进行设置来加速数据集加载） |
 | learning_rate    | 训练初始学习率                                               |
 | epochs           | 训练轮数                                                     |
@@ -56,7 +67,7 @@
 * 设置完成参数后，运行**train.py**即可开始训练：
 
 ```python
-parser.add_argument('--image_path', default='C:/Users/WJQpe/Desktop/DataSets/MSCOCO/train2014', type=str, help='训练集路径')
+parser.add_argument('--image_path', default='./dataset/train2014', type=str, help='训练集路径')
 parser.add_argument('--gray', default=False, type=bool, help='是否使用灰度模式')
 parser.add_argument('--batch_size', default=1, type=int, help='批量大小')
 parser.add_argument('--image_num', default=20000, type=int, help='用于训练的图像数量')
