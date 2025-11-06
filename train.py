@@ -1,8 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Writer: WJQpe
-Date: 2022 04 03 
-"""
 import os.path
 import datetime
 from tqdm import tqdm

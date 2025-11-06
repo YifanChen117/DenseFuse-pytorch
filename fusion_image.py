@@ -19,7 +19,7 @@ if gray:
     weight_path = './weight/0406_19-31_Gray_epoch=6.pt'  # 默认预训练权重文件，也可使用自己训练的.pt文件
     print("gray")
 else:
-    IR_image_path = 'please/input/your/ir image_path/'
+    IR_image_path = 'please/input/your/ir image_path/' 
     VIS_image_path = 'please/input/your/vis image path/'
     result_path = './result/your/result path/'
     weight_path = './weight/your_weight.pt'
@@ -122,7 +122,7 @@ for IR_image_name, VIS_image_name in zip(IR_image_list, VIS_image_list):
             time_list.append(time_cost)
             
             # 保存结果
-            save_image(Fusion_image.cpu().squeeze(), os.path.join(result_path, f"{num}.png"))
+            save_image(Fusion_image.cpu().squeeze(), os.path.join(result_path, f"{VIS_image_name}"))
             
             # 记录时间到文件
             with open(time_file, 'a') as f:

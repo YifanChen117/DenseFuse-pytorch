@@ -1,8 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Writer: WJQpe
-Date: 2022 04 02 
-"""
 import torch
 import os
 from torch.utils.data import Dataset

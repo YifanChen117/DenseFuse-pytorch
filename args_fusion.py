@@ -1,15 +1,12 @@
 # -*- coding: utf-8 -*-
-"""
-Writer: WJQpe
-Date: 2022 04 01 
-"""
+
 import argparse
 
 
 def set_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('--name', default="test", help="Coder Name")
-    parser.add_argument('--image_path', default=r'./dataset', type=str, help='训练集路径')
+    parser.add_argument('--image_path', default=r'./dataset/train2014/', type=str, help='训练集路径')
     parser.add_argument('--gray', default=True, type=bool, help='是否使用灰度模式')
     parser.add_argument('--batch_size', default=32, type=int, help='批量大小')
     parser.add_argument('--image_num', default=10000, type=int, help='用于训练的图像数量')

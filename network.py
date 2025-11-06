@@ -1,8 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Writer: WJQpe
-Date: 2022 04 01 
-"""
 import torch
 import torch.nn as nn
 from torch.utils.tensorboard import SummaryWriter
